@@ -18,6 +18,7 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 import { Address } from '../model/models';
+import { Role } from '../model/models';
 import { Site } from '../model/models';
 import { User } from '../model/models';
 import { UserRole } from '../model/models';
@@ -415,20 +416,20 @@ export class DefaultService {
     }
 
     /**
-     * @param roleId 
+     * @param roleName 
      * @param userId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public userAddRoleUserIdRoleIdPut(roleId: string, userId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<any>;
-    public userAddRoleUserIdRoleIdPut(roleId: string, userId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpResponse<any>>;
-    public userAddRoleUserIdRoleIdPut(roleId: string, userId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpEvent<any>>;
-    public userAddRoleUserIdRoleIdPut(roleId: string, userId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined}): Observable<any> {
-        if (roleId === null || roleId === undefined) {
-            throw new Error('Required parameter roleId was null or undefined when calling userAddRoleUserIdRoleIdPut.');
+    public userAddRoleUserIdRoleNamePut(roleName: Role, userId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<any>;
+    public userAddRoleUserIdRoleNamePut(roleName: Role, userId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpResponse<any>>;
+    public userAddRoleUserIdRoleNamePut(roleName: Role, userId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpEvent<any>>;
+    public userAddRoleUserIdRoleNamePut(roleName: Role, userId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined}): Observable<any> {
+        if (roleName === null || roleName === undefined) {
+            throw new Error('Required parameter roleName was null or undefined when calling userAddRoleUserIdRoleNamePut.');
         }
         if (userId === null || userId === undefined) {
-            throw new Error('Required parameter userId was null or undefined when calling userAddRoleUserIdRoleIdPut.');
+            throw new Error('Required parameter userId was null or undefined when calling userAddRoleUserIdRoleNamePut.');
         }
 
         let headers = this.defaultHeaders;
@@ -450,7 +451,7 @@ export class DefaultService {
             responseType_ = 'text';
         }
 
-        return this.httpClient.put<any>(`${this.configuration.basePath}/user/add-role/${encodeURIComponent(String(userId))}/${encodeURIComponent(String(roleId))}`,
+        return this.httpClient.put<any>(`${this.configuration.basePath}/user/add-role/${encodeURIComponent(String(userId))}/${encodeURIComponent(String(roleName))}`,
             null,
             {
                 responseType: <any>responseType_,
@@ -605,20 +606,20 @@ export class DefaultService {
     }
 
     /**
-     * @param roleId 
+     * @param roleName 
      * @param userId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public userRemoveRoleUserIdRoleIdPut(roleId: string, userId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<any>;
-    public userRemoveRoleUserIdRoleIdPut(roleId: string, userId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpResponse<any>>;
-    public userRemoveRoleUserIdRoleIdPut(roleId: string, userId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpEvent<any>>;
-    public userRemoveRoleUserIdRoleIdPut(roleId: string, userId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined}): Observable<any> {
-        if (roleId === null || roleId === undefined) {
-            throw new Error('Required parameter roleId was null or undefined when calling userRemoveRoleUserIdRoleIdPut.');
+    public userRemoveRoleUserIdRoleNamePut(roleName: Role, userId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<any>;
+    public userRemoveRoleUserIdRoleNamePut(roleName: Role, userId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpResponse<any>>;
+    public userRemoveRoleUserIdRoleNamePut(roleName: Role, userId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: undefined}): Observable<HttpEvent<any>>;
+    public userRemoveRoleUserIdRoleNamePut(roleName: Role, userId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: undefined}): Observable<any> {
+        if (roleName === null || roleName === undefined) {
+            throw new Error('Required parameter roleName was null or undefined when calling userRemoveRoleUserIdRoleNamePut.');
         }
         if (userId === null || userId === undefined) {
-            throw new Error('Required parameter userId was null or undefined when calling userRemoveRoleUserIdRoleIdPut.');
+            throw new Error('Required parameter userId was null or undefined when calling userRemoveRoleUserIdRoleNamePut.');
         }
 
         let headers = this.defaultHeaders;
@@ -640,7 +641,7 @@ export class DefaultService {
             responseType_ = 'text';
         }
 
-        return this.httpClient.put<any>(`${this.configuration.basePath}/user/remove-role/${encodeURIComponent(String(userId))}/${encodeURIComponent(String(roleId))}`,
+        return this.httpClient.put<any>(`${this.configuration.basePath}/user/remove-role/${encodeURIComponent(String(userId))}/${encodeURIComponent(String(roleName))}`,
             null,
             {
                 responseType: <any>responseType_,
