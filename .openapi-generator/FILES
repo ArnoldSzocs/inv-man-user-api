@@ -8,11 +8,11 @@ encoder.ts
 git_push.sh
 index.ts
 model/address.ts
+model/authRequest.ts
 model/models.ts
 model/role.ts
 model/site.ts
 model/user.ts
-model/userRole.ts
 ng-package.json
 package.json
 tsconfig.json

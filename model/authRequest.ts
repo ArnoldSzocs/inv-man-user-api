@@ -9,22 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { Role } from './role';
-import { Site } from './site';
-import { Address } from './address';
 
 
-export interface User { 
-    address?: Address;
-    employeeId?: string;
-    firstName?: string;
-    id?: string;
-    lastName?: string;
+export interface AuthRequest { 
     password?: string;
-    personalId?: string;
-    roles?: Set<Role>;
-    site?: Site;
-    supervisor?: User;
     username?: string;
 }
 
